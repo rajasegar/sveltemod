@@ -1,0 +1,19 @@
+{
+  "name": "jscodeshift-svelte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "convert": "jscodeshift --extensions=svelte ./sample"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jscodeshift": "^0.15.1",
+    "magic-string": "^0.30.5",
+    "posthtml": "^0.16.6",
+    "svelte": "^4.2.8"
+  }
+}
