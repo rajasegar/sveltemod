@@ -1,15 +1,16 @@
 {
-  "name": "jscodeshift-svelte",
-  "version": "0.0.1",
-  "description": "",
+  "name": "sveltemod",
+  "version": "0.0.0",
+  "description": "A CLI to run codemods for Svelte",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "convert": "jscodeshift --extensions=svelte ./sample"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["codemod","svelte","jscodeshift","cli"],
+  "author": "Rajasegar Chandran",
+   "repository": "https://github.com/rajasegar/sveltemod",
+  "license": "MIT",
   "dependencies": {
     "jscodeshift": "^0.15.1",
     "posthtml": "^0.16.6",
