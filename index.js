@@ -1,7 +1,7 @@
 const { run: jscodeshift } = require('jscodeshift/src/Runner');
 const path = require('node:path');
 
-const transformPath = path.resolve('transforms/v5-props.js');
+const transformPath = path.resolve('transforms/v5-effect.js');
 const paths = ['sample'];
 const options = {
   // dry: true,

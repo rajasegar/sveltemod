@@ -13,17 +13,19 @@ module.exports = async function transformer(file, api, options) {
 
         root
           .find(j.LabeledStatement, {
-            body: { expression: { type: 'AssignmentExpression' } }
+            body: { expression: { type: 'CallExpression' } }
           })
           .replaceWith((path) => {
-            const expr = path.value.body.expression;
-            return j.variableDeclaration('const', [
-              j.variableDeclarator(
-                j.identifier(expr.left.name),
-                j.callExpression(j.identifier('$derived'), [expr.right])
-              )
-            ]);
+            return j.expressionStatement(
+              j.callExpression(j.identifier('$effect'), [
+                j.arrowFunctionExpression(
+                  [],
+                  j.blockStatement([path.value.body])
+                )
+              ])
+            );
           });
+
         // console.log(root.toSource());
         return {
           code: root.toSource()

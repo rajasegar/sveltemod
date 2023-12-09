@@ -4,10 +4,13 @@
     height: height
   } = $props();
 
-  let count = $state(0);
-  let name = $state('John');
-  let flag = $state(true);
-  const foo = 'bar';
+
+  $: area = width * height;
+
+  $effect(() => {
+    console.log('hello');
+  });
+
 
   function increment() {
       count += 1;
