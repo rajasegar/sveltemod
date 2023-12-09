@@ -15,5 +15,8 @@
     "magic-string": "^0.30.5",
     "posthtml": "^0.16.6",
     "svelte": "^4.2.8"
+  },
+  "devDependencies": {
+    "prettier": "3.1.0"
   }
 }
