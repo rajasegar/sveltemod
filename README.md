@@ -20,26 +20,26 @@ sveltemod transforms/v5-derived.js src/App.svelte
 
 
 ## Available codemods:
-- v5/derived.js
+### v5/derived.js
 
-### Before
+#### Before
 ```js
 $: area = width * height;
 ```
 
-### After
+#### After
 ```js
 const area = $derived(width * height);
 ```
 
-- v5/effect.js
+### v5/effect.js
 
-### Before
+#### Before
 ```js
 $: console.log(area);
 ```
 
-### After
+#### After
 ```js
 $effect(() => {
     console.log(area);
@@ -48,30 +48,30 @@ $effect(() => {
 ```
 
 
-- v5/props.js
+### v5/props.js
 
-### Before
+#### Before
 ```js
 export let width;
 export let height;
 
 ```
 
-### After
+#### After
 ```js
 let { width, height } = $props();
 
 ```
 
 
-- v5/state.js
+### v5/state.js
 
-### Before
+#### Before
 ```js
 let count = 0;
 ```
 
-### After
+#### After
 ```js
 
 let count = $state(0);
