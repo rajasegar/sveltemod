@@ -17,7 +17,11 @@ sveltemod <codemod> <file>
 Example:
 ```
 sveltemod transforms/v5-derived.js src/App.svelte
+```
 
+You can also use jscodeshift to run the codemods like:
+```
+jscodeshift --transform=sveltemod/transforms/v5-derived.js --extensions=svelte ./src/App.svelte
 ```
 
 
@@ -81,7 +85,10 @@ let count = $state(0);
 
 ## Differences from svelte-migrate
 - It uses jscodeshift underneath which is kind of standard tooling for codemods
-- It completely uses AST based transforms instead of regex replacement which svelte migrate mostly uses
+- It completely uses AST based transforms instead of regex replacement which [svelte-migrate](https://github.com/sveltejs/kit/tree/master/packages/migrate) mostly uses
 - You can run any Jscodeshift based transform available out there not just something comes with svelte-migrate
 - Currently svelte-migrate doesn't have codemods for v5 or runes, I try to address that
 - It is extendable with other transforms for html, css, sass and so on
+
+## References:
+- https://github.com/sveltejs/kit/discussions/5774
