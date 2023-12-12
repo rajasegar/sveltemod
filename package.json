@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "convert": "jscodeshift --transform=./transforms/v5-derived.js --extensions=svelte ./sample"
+    "convert": "jscodeshift --transform=./transforms/v5-derived.js --extensions=svelte ./sample",
+    "deploy": "npm version patch && npm publish && git push --tags",
+    "reset": "cp ./fixtures/*.svelte ./sample/"
   },
   "keywords": [
     "codemod",
