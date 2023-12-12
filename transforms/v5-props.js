@@ -1,7 +1,6 @@
 const { preprocess } = require('svelte/compiler');
 
 module.exports = async function transformer(file, api, options) {
-  console.log(options);
   options.extensions = 'svelte';
   const { code } = await preprocess(
     file.source,
@@ -36,7 +35,6 @@ module.exports = async function transformer(file, api, options) {
           ])
         );
 
-        console.log(root.toSource());
         return {
           code: root.toSource()
         };
@@ -47,6 +45,5 @@ module.exports = async function transformer(file, api, options) {
     },
     { filename: 'App.svelte' }
   );
-  console.log(code);
   return code;
 };

@@ -21,7 +21,7 @@ sveltemod transforms/v5-derived.js src/App.svelte
 
 You can also use jscodeshift to run the codemods like:
 ```
-jscodeshift --transform=sveltemod/transforms/v5-derived.js --extensions=svelte ./src/App.svelte
+jscodeshift --transform=./transforms/v5-derived.js --extensions=svelte ./src/App.svelte
 ```
 
 
